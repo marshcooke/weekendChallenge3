@@ -42,7 +42,7 @@ app.get('/tasks', function(req, res){
 });
 
 app.post('/tasks', function(req, res) {
-    var task = req.body.task;
+    var task = req.body;
     console.log('in post / response function', task); 
     pool.connect(function(connectionError, client, done) {
         if(connectionError) {
