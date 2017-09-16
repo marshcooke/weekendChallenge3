@@ -10,13 +10,22 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>To-Do</h1>
+    <h1>To Do's</h1>
     <section id="toDos">
-        <input id="field" type="text" placeholder="Create a Task">
+        <input id="todoInput" type="text" placeholder="Create a Task">
         <button ="addButton">Add Task</button>
         </section>
+    </br>
     <section id="toDisplay">
+        <table>
+            <thead>
+                <th>Tasks</th>
+                <th>Complete</th>
+                <th>Delete</th>
+            </thead>
+            <tbody id="displayTasks">
+            </tbody>
+        </table>
         </section>
-    
 </body>
 </html>

@@ -4,5 +4,14 @@ body {
 
 h1 {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    color: #0B0BB8;
+    color: #18187A;
+}
+
+table {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #7D1818;
+    border: 1px solid #6E6464;
+    margin: 1px; padding: 1px;
+    width: 100%;
+    table-layout: fixed;
 }
