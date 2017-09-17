@@ -2,7 +2,7 @@ body {
     background-color: #E0CED1; 
 }
 
-h1 {
+h1, h3 {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: #514773;
 }
@@ -41,4 +41,14 @@ button {
 
 button:hover {
     background-color: #605682;
+}
+
+.complete {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #7D1818;
+    margin: 1px; padding: 1px;
+    width: 100%;
+    table-layout: fixed;
+    border-bottom: 1px solid #6E6464;
+    text-align: center;
 }

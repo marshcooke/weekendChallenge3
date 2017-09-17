@@ -9,23 +9,42 @@
     <link rel="stylesheet" href="/styles/style.css">
     <title>Document</title>
 </head>
+<main>
 <body>
     <h1>To Do's</h1>
-    <section id="toDos">
+    <section id="toDos" class="incomplete">
         <input id="todoInput" type="text" placeholder="Create a Task">
         <button id="addButton">Add Task</button>
         </section>
     </br>
+</br>
     <section id="toDisplay">
+            <h3 style="text-align: center">Incomplete Tasks</h3>
         <table>
             <thead>
                 <th>Tasks</th>
-                <th>Complete</th>
+                <th>Incomplete</th>
                 <th>Delete</th>
             </thead>
             <tbody id="displayTasks">
             </tbody>
         </table>
+    </br>
+</br>
+</br>
         </section>
+    <section id="finishedTasks" class="complete">
+        <h3>Complete Tasks</h3>
+                <table>
+                    <thead>
+                        <th>Tasks</th>
+                        <th>Completed</th>
+                        <th>Delete</th>
+                    </thead>
+                    <tbody id="completedTasks">
+                    </tbody>
+                </table>
+                </section>
+                </main>
 </body>
 </html>
