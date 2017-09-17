@@ -11,20 +11,23 @@ function onReady() {
 
 function getTasks() {
     console.log('in getTasks');
+    $('#displayTasks').empty();
     $.ajax({
         type: 'GET',
         url: '/tasks',
         success: function (response) {
             console.log('getTasks success: ', response)
             for (var i = 0; i < response.length; i++) {
-                var $row = $('<tr></tr>');
-                $row.append('<td>', response[i].task, '</td>');
+                var $row = $('<tr>');
+                $row.append('<td>' + response[i].task);
 
-                var $completeButton = $('<td><button class="completedBtn" data-id="', response[i].id, '">Complete</button></td>');
+                var $completeButton = $('<td><button class="completedBtn" data-id="' + response[i].id + '">Complete</button></td>');
                 $row.append($completeButton);
 
-                var $deleteButton = $('<td><button class="deletedBtn" data-id="', response[i].id, '">Delete</button></td>');
+                var $deleteButton = $('<td><button class="deletedBtn" data-id="' + response[i].id + '">Delete</button></td>');
                 $row.append($deleteButton);
+
+                $('#displayTasks').append($row);
             }
         }
     });
@@ -33,12 +36,10 @@ function getTasks() {
 function displayTasks() {
     console.log('in displayTasks');
 
-    var tasks = [
-        {
-            task: 'Take Fiona to the Vet',
+    var tasks = [{
+            task: $('#todoInput').val(),
             complete: true,
-        }
-    ];
+        }];
 
     $.ajax({
         type: 'POST',
@@ -49,4 +50,5 @@ function displayTasks() {
             getTasks();
         }
     });
+    $('#inputBox').val('');
 };

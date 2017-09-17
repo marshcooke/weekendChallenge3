@@ -13,8 +13,6 @@ app.listen(port, function(){
     console.log('listening on port', port);
 })
 
-
-
 app.get('/', function(req, res){
     console.log('sending / to DOM');
     var indexPath = path.join(__dirname, '/./public/views/index.html');
