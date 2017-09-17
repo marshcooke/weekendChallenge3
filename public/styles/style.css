@@ -52,3 +52,7 @@ button:hover {
     border-bottom: 1px solid #6E6464;
     text-align: center;
 }
+
+.incomplete {
+    align-items: center;
+}
