@@ -24,6 +24,7 @@ app.get('/tasks', function(req, res){
     pool.connect(function(connectionError, client, done) {
         if(connectionError) {
             console.log(connectionError);
+            res.sendStatus(500);
         } else {
             client.query('SELECT * FROM todos', function(queryError, resultsObj) {
                 done();
@@ -40,7 +41,7 @@ app.get('/tasks', function(req, res){
 });
 
 app.post('/tasks', function(req, res) {
-    var task = req.body;
+    var task = req.body.task;
     console.log('in post / response function', task); 
     pool.connect(function(connectionError, client, done) {
         if(connectionError) {
@@ -57,6 +58,25 @@ app.post('/tasks', function(req, res) {
                 } else {
                     console.log('resultsObj: ', resultsObj);
                     res.sendStatus(201);
+                }
+            });
+        }
+    });
+});
+
+app.delete('/tasks/:id', function(req, res) {
+    console.log('in delete /tasks/:id', req.params.id); 
+    var itemId = req.params.id;
+    pool.connect(function(connectionError, client, done){
+        if(connectionError) {
+            res.sendStatus(500);
+        } else {
+            client.query('DELETE FROM todos WHERE id=$1', [itemId], function (queryError, resultsObj){
+                done();
+                if (queryError) {
+                    res.sendStatus(500);
+                } else {
+                    res.sendStatus(202);
                 }
             });
         }

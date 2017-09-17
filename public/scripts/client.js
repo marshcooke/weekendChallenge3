@@ -5,7 +5,8 @@ $(document).ready(onReady);
 function onReady() {
     console.log('jq');
     // displayTasks();
-    $('#addButton').on('click', displayTasks);
+    $('#addButton').on('click', addTask);
+    $('#toDisplay').on('click', '.deletedBtn', deleteTask);
     getTasks();
 };
 
@@ -33,22 +34,42 @@ function getTasks() {
     });
 };
 
-function displayTasks() {
+function addTask() {
     console.log('in displayTasks');
 
-    var tasks = [{
-            task: $('#todoInput').val(),
-            complete: true,
-        }];
+    var task = {
+            task: $('#todoInput').val()
+        };
 
     $.ajax({
         type: 'POST',
         url: '/tasks',
-        data: tasks,
+        data: task,
         success: function (response) {
             console.log('Post success: ', response);
             getTasks();
         }
     });
-    $('#inputBox').val('');
+    $('#todoInput').val('');
+};
+
+function deleteTask(){
+    if (window.confirm("You are about to delete this task! If you are sure, press okay to delete.") == true) {
+        txt = "You pressed OK!";
+        console.log('in deleteTask');
+        
+        var itemId = $(this).data('id');
+        console.log('itemId', itemId);
+        
+        $.ajax({
+            method: 'DELETE',
+            url: '/tasks/' + itemId,
+            success: function(response) {
+            console.log('Delete response: ', response);              
+            getTasks();
+            }
+        });
+    } else {
+        txt = "You pressed Cancel!";
+    };
 };
