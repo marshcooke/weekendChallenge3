@@ -47,16 +47,16 @@ function appendToTasks(taskObj) {
 };
 
 function appendToComplete(taskObj) {
-        var $row = $('<tr>');
-        $row.append('<td>' + taskObj.task);
-    
-        var $reviseButton = $('<td><button class="revisedBtn" data-id="' + taskObj.id + '">Revise</button></td>');
-        $row.append($reviseButton);
+    var $row = $('<tr>');
+    $row.append('<td>' + taskObj.task);
 
-        var $deleteButton = $('<td><button class="deletedBtn" data-id="' + taskObj.id + '">Delete</button></td>');
-        $row.append($deleteButton);
-    
-        $('#completedTasks').append($row); 
+    var $reviseButton = $('<td><button class="revisedBtn" data-id="' + taskObj.id + '">Revise</button></td>');
+    $row.append($reviseButton);
+
+    var $deleteButton = $('<td><button class="deletedBtn" data-id="' + taskObj.id + '">Delete</button></td>');
+    $row.append($deleteButton);
+
+    $('#completedTasks').append($row);
 };
 
 
@@ -64,8 +64,8 @@ function addTask() {
     console.log('in displayTasks');
 
     var task = {
-            task: $('#todoInput').val()
-        };
+        task: $('#todoInput').val()
+    };
 
     $.ajax({
         type: 'POST',
@@ -79,20 +79,20 @@ function addTask() {
     $('#todoInput').val('');
 };
 
-function deleteTask(){
+function deleteTask() {
     if (window.confirm("You are about to delete this task! If you are sure, press okay to delete.") == true) {
         txt = "You pressed OK!";
         console.log('in deleteTask');
-        
+
         var itemId = $(this).data('id');
         console.log('itemId', itemId);
-        
+
         $.ajax({
             method: 'DELETE',
             url: '/tasks/' + itemId,
-            success: function(response) {
-            console.log('Delete response: ', response);              
-            getTasks();
+            success: function (response) {
+                console.log('Delete response: ', response);
+                getTasks();
             }
         });
     } else {
@@ -100,7 +100,7 @@ function deleteTask(){
     };
 };
 
-function completeTask(){
+function completeTask() {
     console.log('in completeTask');
 
     var itemId = $(this).data('id');

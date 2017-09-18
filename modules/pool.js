@@ -9,4 +9,4 @@ var config = {
 
 var todoPool = new Pool(config);
 
-module.exports = todoPool
+module.exports = todoPool;
