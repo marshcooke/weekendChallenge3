@@ -1,8 +1,9 @@
 body {
-    background-color: #E0CED1; 
+    background-color: #E0CED1;
 }
 
-h1, h3 {
+h1,
+h3 {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: #514773;
 }
@@ -10,19 +11,21 @@ h1, h3 {
 table {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: #7D1818;
-    margin: 1px; padding: 1px;
+    margin: 1px;
+    padding: 1px;
     width: 100%;
     table-layout: fixed;
 }
 
-th, td {
+th,
+td {
     border-bottom: 1px solid #7A5A5A;
     text-align: center;
 }
 
 input {
     width: 25%;
-    padding: 16px 32px;  
+    padding: 16px 32px;
     border: 2px solid #332A53;
     border-radius: 4px;
     font-size: 85%;
@@ -46,7 +49,8 @@ button:hover {
 .complete {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: #7D1818;
-    margin: 1px; padding: 1px;
+    margin: 1px;
+    padding: 1px;
     width: 100%;
     table-layout: fixed;
     border-bottom: 1px solid #6E6464;

@@ -7,9 +7,10 @@ var pool = require('./modules/pool');
 var index = require('./routes/index');
 var tasks = require('./routes/tasks');
 
-
 app.use(express.static('public'));
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
 app.use('/', index);
 app.use('/tasks', tasks);
 
