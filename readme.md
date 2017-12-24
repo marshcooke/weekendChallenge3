@@ -1,7 +1,7 @@
 # Project completed during weekend 3 at Prime
 While enrolled at Prime Digital Academy, we took on weekend code challenges. Week 3 is outlined below:
 
-# Weekend Challenge #3
+# Weekend Challenge 3
 
 ## The To-Do App
 
