@@ -59,7 +59,6 @@ function appendToComplete(taskObj) {
     $('#completedTasks').append($row);
 };
 
-
 function addTask() {
     console.log('in displayTasks');
 
